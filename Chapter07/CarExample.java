@@ -7,7 +7,8 @@ public class CarExample {
         for(int i=1; i<=5; i++) {
             int problemLocation = myCar.run();
 
-            switch(problemLocation) {
+            // 개선 전
+            /*switch(problemLocation) {
                 case 1:
                     System.out.println("앞왼쪽 HankookTire로 교체");
                     myCar.frontLeftTire = new HankookTire("앞왼쪽", 15);
@@ -24,6 +25,11 @@ public class CarExample {
                     System.out.println("뒤오른쪽 KumhoTire로 교체");
                     myCar.backRightTire = new KumhoTire("뒤오른쪽", 17);
                     break;
+            }*/
+
+            if(problemLocation != 0) {
+                System.out.println(myCar.tires[problemLocation-1].location + "Hankook Tire로 교체");
+                myCar.tires[problemLocation-1] = new HankookTire(myCar.tires[problemLocation-1].location, 15);
             }
 
             System.out.println("----------------------------");  // 1회전시 출력되는 내용 구분
